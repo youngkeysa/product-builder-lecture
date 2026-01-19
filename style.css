@@ -6,6 +6,12 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f0f2f5;
 }
 
 .container {
@@ -14,6 +20,12 @@ body {
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+body.dark-mode .container {
+    background-color: #2c2c2c;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 h1 {
@@ -21,8 +33,11 @@ h1 {
     color: #333;
 }
 
-#generate-btn {
-    background-color: #4CAF50;
+body.dark-mode h1 {
+    color: #f0f2f5;
+}
+
+#generate-btn, #theme-toggle-btn {
     color: white;
     border: none;
     padding: 1rem 2rem;
@@ -32,8 +47,21 @@ h1 {
     transition: background-color 0.3s;
 }
 
+#generate-btn {
+    background-color: #4CAF50;
+}
+
+#theme-toggle-btn {
+    background-color: #333;
+    margin-right: 1rem;
+}
+
 #generate-btn:hover {
     background-color: #45a049;
+}
+
+#theme-toggle-btn:hover {
+    background-color: #555;
 }
 
 #numbers-display {
