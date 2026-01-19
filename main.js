@@ -1,20 +1,16 @@
 const generateBtn = document.getElementById('generate-btn');
-const numbersDisplay = document.getElementById('numbers-display');
+const menuDisplay = document.getElementById('menu-display');
 const themeToggleBtn = document.getElementById('theme-toggle-btn');
 
-generateBtn.addEventListener('click', () => {
-    numbersDisplay.innerHTML = '';
-    const numbers = new Set();
-    while (numbers.size < 6) {
-        numbers.add(Math.floor(Math.random() * 45) + 1);
-    }
+const dinnerMenus = [
+    "Pizza", "Hamburger", "Sushi", "Pasta", "Steak",
+    "Fried Chicken", "Tacos", "Salad", "Ramen", "Bibimbap"
+];
 
-    for (const number of [...numbers].sort((a, b) => a - b)) {
-        const numberBall = document.createElement('div');
-        numberBall.classList.add('number-ball');
-        numberBall.textContent = number;
-        numbersDisplay.appendChild(numberBall);
-    }
+generateBtn.addEventListener('click', () => {
+    const randomIndex = Math.floor(Math.random() * dinnerMenus.length);
+    const selectedMenu = dinnerMenus[randomIndex];
+    menuDisplay.textContent = selectedMenu;
 });
 
 themeToggleBtn.addEventListener('click', () => {
